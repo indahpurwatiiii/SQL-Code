@@ -1,0 +1,25 @@
+SELECT
+    geohash,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_purchasing_power__per_cap END) / NULLIF(SUM(population), 0) AS Purchasing_Power_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_food___non_alcoholic_be_2 END) / NULLIF(SUM(population), 0) AS Food_NonAlcoholic_Beverage_Expenditures_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_alcoholic_beverage_expe_2 END) / NULLIF(SUM(population), 0) AS Alcoholic_Beverage_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_tobacco_expenditures__p_1 END) / NULLIF(SUM(population), 0) AS Tobacco_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_clothing_expenditures___1 END) / NULLIF(SUM(population), 0) AS Clothing_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_footwear_expenditures___1 END) / NULLIF(SUM(population), 0) AS Footwear_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_furniture__furnishing___2 END) / NULLIF(SUM(population), 0) AS Furniture_Furnishing_Floor_Covering_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_household_textiles_expe_2 END) / NULLIF(SUM(population), 0) AS Household_Textiles_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_household_appliances_ex_2 END) / NULLIF(SUM(population), 0) AS Household_Appliances_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_glassware__tableware____2 END) / NULLIF(SUM(population), 0) AS Glassware_Tableware_Household_Utensils_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_house___garden_tools_eq_2 END) / NULLIF(SUM(population), 0) AS House_Garden_Tools_Equipment_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_routine_household_maint_2 END) / NULLIF(SUM(population), 0) AS Routine_Household_Maintenance_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_medical_products___equi_2 END) / NULLIF(SUM(population), 0) AS Medical_Products_Equipment_Appliances_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_consumer_electronics____2 END) / NULLIF(SUM(population), 0) AS Consumer_Electronics_Photo_IT_Equipment_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_recreation___culture_du_2 END) / NULLIF(SUM(population), 0) AS Recreation_Culture_Durable_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_toys__games__hobby__spo_2 END) / NULLIF(SUM(population), 0) AS Toys_Games_Hobby_Sport_Garden_Pets_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_recreational___cultural_2 END) / NULLIF(SUM(population), 0) AS Recreational_Cultural_Service_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_books__newspapers____st_2 END) / NULLIF(SUM(population), 0) AS Books_Newspapers_Stationery_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_catering_services_expen_2 END) / NULLIF(SUM(population), 0) AS Catering_Services_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_personal_care_expenditu_2 END) / NULLIF(SUM(population), 0) AS Personal_Care_Expenditures_PerCapita_2022,
+    AVG(CASE WHEN population = 0 THEN 0 ELSE population*f2022_jewelry__watches____per_2 END) / NULLIF(SUM(population), 0) AS Jewelry_Watches_Personal_Effects_Expenditures_PerCapita_2022
+FROM locator.sde.geohash_purchasing
+GROUP BY geohash;
